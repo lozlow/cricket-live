@@ -1,0 +1,7 @@
+*.log
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+/resources/public/js
+/.repl

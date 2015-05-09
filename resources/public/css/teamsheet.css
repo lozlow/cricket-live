@@ -1,0 +1,14 @@
+.Team-Sheet {
+    margin: 30px 0;
+}
+
+.Team-Sheet__player-info {
+    padding: 6px 10px;
+    background: #ccc;
+    margin-bottom: 6px;
+    margin-right: 2em;
+}
+
+.Team-Sheet__player-info--captain {
+    border-left: 4px solid #567;
+}
