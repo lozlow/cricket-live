@@ -12,13 +12,27 @@
 
 (register-sub
     :team-info
-    (fn [db [_ list]]
-        (reaction (conj (get (:team-list @db) list) {:team list}))))
+    (fn [db [_ team]]
+        (reaction (get (:team-list @db) team))))
+
+(register-sub
+    :player-list
+    (fn [_ [_ team]]
+        (let [team-info (subscribe [:team-info team])]
+            (reaction (map #(conj % {:team team}) (:players @team-info))))))
 
 (register-sub
     :currently-batting
     (fn [db _]
         (reaction (:currently-batting @db))))
+
+(register-sub
+    :currently-bowling
+    (fn [db _]
+        (let [opposite {:home :away
+                        :away :home}]
+            (reaction (get opposite (:currently-batting @db))))))
+
 
 ;; Handlers
 

@@ -4,7 +4,7 @@
 (def default
     {:active :teams
      :team-list {:home {:name "Essex"
-                        :players [{:pos 1 :name "Bob Willis"}
+                        :players [{:pos 1 :name "Bob Willis" :score 312 :balls 510}
                                   {:pos 2 :name "Geoffrey Boycott" :captain true}
                                   {:pos 3 :name "Alistair Cook"}]}
                  :away {:name "Surrey"
